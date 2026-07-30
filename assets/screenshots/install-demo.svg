@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="900" viewBox="0 0 1440 900" role="img" aria-label="Quantum Terminal Pro AWS install guide demo">
+  <defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#090914"/><stop offset="1" stop-color="#170b24"/></linearGradient><style>.s{font-family:Inter,Arial,sans-serif}.m{font-family:Consolas,monospace}.t{fill:#f5f7ff}.u{fill:#8f98ad}.g{fill:#56e39f}.o{fill:#ff9f6e}.p{fill:#151b2c;stroke:#303956}.term{fill:#090c16;stroke:#313a55}</style></defs>
+  <rect width="1440" height="900" fill="url(#bg)"/>
+  <text x="100" y="115" class="s t" font-size="34" font-weight="800">AWS / VPS INSTALLATION</text>
+  <text x="100" y="153" class="m u" font-size="15">A clean self-hosted deployment path for traders who do not want their desktop running 24/7.</text>
+  <rect x="100" y="210" width="390" height="480" rx="18" class="p"/><text x="135" y="265" class="s t" font-size="24" font-weight="800">1. Upload</text><text x="135" y="320" class="m u" font-size="16">Copy source to AWS EC2</text><text x="135" y="360" class="m u" font-size="16">Use SSH, SCP, PuTTY, or Git</text><text x="135" y="430" class="s t" font-size="24" font-weight="800">2. Configure</text><text x="135" y="485" class="m u" font-size="16">Set state file paths</text><text x="135" y="525" class="m u" font-size="16">Enable adapter capabilities</text><text x="135" y="595" class="s t" font-size="24" font-weight="800">3. Run</text><text x="135" y="650" class="m g" font-size="16">systemctl enable --now</text>
+  <rect x="550" y="210" width="790" height="480" rx="18" class="term"/>
+  <text x="590" y="270" class="m g" font-size="18">$ python3 -m venv venv</text>
+  <text x="590" y="318" class="m g" font-size="18">$ ./venv/bin/pip install -r requirements.txt</text>
+  <text x="590" y="366" class="m g" font-size="18">$ cp examples/dashboard_config.example.json dashboard_config.json</text>
+  <text x="590" y="414" class="m g" font-size="18">$ nano dashboard_config.json</text>
+  <text x="590" y="462" class="m g" font-size="18">$ sudo cp quantdash.service /etc/systemd/system/</text>
+  <text x="590" y="510" class="m g" font-size="18">$ sudo systemctl enable --now quantdash</text>
+  <text x="590" y="590" class="m o" font-size="20">Open http://SERVER_IP:8050/manager</text>
+  <rect x="100" y="735" width="1240" height="70" rx="14" class="p"/><text x="135" y="779" class="m t" font-size="18">Setup Included package: guided AWS/VPS installation and config review for $499.</text>
+</svg>
