@@ -1,0 +1,54 @@
+{
+  "BTC/USDT:USDT": {
+    "summary": "Long position remains valid after liquidity sweep and bullish CHOCH.",
+    "risk_level": "CONTROLLED",
+    "risk_notes": [
+      "TP1 already secured.",
+      "Stop can be moved closer if momentum fades."
+    ],
+    "current_thesis": "Trend continuation is still active while BTC holds above the reclaimed liquidity zone.",
+    "entry_factors": {
+      "Liquidity sweep": {"score": 9.1, "max": 10, "active": true, "detail": "Sell-side sweep reclaimed."},
+      "CHOCH": {"score": 8.6, "max": 10, "active": true, "detail": "Bullish structure shift."},
+      "MTF alignment": {"score": 8.2, "max": 10, "active": true, "detail": "15m and 1h aligned."},
+      "Funding risk": {"score": 6.8, "max": 10, "active": false, "detail": "Funding is normal."}
+    },
+    "exit_layers": {
+      "TP1 banked": {"score": 10, "max": 10, "active": true, "detail": "Partial exit complete."},
+      "Trailing protection": {"score": 6.7, "max": 10, "active": true, "detail": "SL review suggested."},
+      "Momentum decay": {"score": 2.4, "max": 10, "active": false, "detail": "No exit trigger yet."}
+    },
+    "why_exit": "No full exit yet. Watch TP2 approach and momentum decay."
+  },
+  "ETH/USDT:USDT": {
+    "summary": "Short position opened after bearish BOS and failed reclaim.",
+    "risk_level": "NORMAL",
+    "risk_notes": ["No partial exits yet.", "Stop remains above failed reclaim."],
+    "current_thesis": "ETH remains below the rejection level; downside continuation is possible.",
+    "entry_factors": {
+      "Bearish BOS": {"score": 8.8, "max": 10, "active": true, "detail": "Structure broke lower."},
+      "Failed reclaim": {"score": 7.9, "max": 10, "active": true, "detail": "Resistance held."},
+      "MTF alignment": {"score": 7.4, "max": 10, "active": true, "detail": "1h trend down."}
+    },
+    "exit_layers": {
+      "TP1 proximity": {"score": 5.2, "max": 10, "active": false, "detail": "Approaching first target."},
+      "Risk compression": {"score": 4.1, "max": 10, "active": false, "detail": "No urgent action."}
+    }
+  },
+  "SOL/USDT:USDT": {
+    "summary": "Long position is under review because current regime is range-bound.",
+    "risk_level": "WATCH",
+    "risk_notes": ["Range regime detected.", "Manual reduction may be appropriate."],
+    "current_thesis": "SOL needs to reclaim 182.35 quickly or the setup weakens.",
+    "entry_factors": {
+      "Range support": {"score": 6.1, "max": 10, "active": true, "detail": "Support reaction."},
+      "MTF alignment": {"score": 4.7, "max": 10, "active": false, "detail": "Mixed timeframes."},
+      "Liquidity sweep": {"score": 3.2, "max": 10, "active": false, "detail": "Not confirmed."}
+    },
+    "exit_layers": {
+      "Invalidation risk": {"score": 7.3, "max": 10, "active": true, "detail": "Below entry."},
+      "Break-even unavailable": {"score": 5.0, "max": 10, "active": false, "detail": "Position not profitable."}
+    },
+    "why_exit": "Consider reducing risk if range pressure continues."
+  }
+}
