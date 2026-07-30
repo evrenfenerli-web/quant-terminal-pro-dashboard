@@ -2,6 +2,8 @@
 
 ![Quantum Terminal Pro](assets/quantum-terminal-pro.svg)
 
+**Early Access is live:** [Buy Quantum Terminal Pro Dashboard](https://app.lemonsqueezy.com/share/1257430)
+
 **Quantum Terminal Pro Dashboard** is a self-hosted trading bot control panel for
 teams and solo traders who already run algorithmic trading systems and need a
 clean way to monitor positions, inspect risk, review trade history, and queue
@@ -146,7 +148,7 @@ Best customer fit:
 
 Suggested commercial packaging:
 
-- Early Access: dashboard source, docs, and adapter contract for $149.
+- Early Access: dashboard source, docs, and adapter contract for $149. [Buy now](https://app.lemonsqueezy.com/share/1257430)
 - Pro: dashboard, adapter examples, AWS deployment guide, and updates for $249.
 - Setup Included: Pro plus guided VPS/AWS installation for $499.
 - Custom Adapter: exchange, broker, or bot-specific integration from $999.
