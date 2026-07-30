@@ -10,6 +10,8 @@ manual intervention commands.
 It is designed as an adapter-first dashboard: your bot can be simple or complex.
 If it can write state files and read a JSONL command queue, it can connect.
 
+![Trade Manager demo](assets/screenshots/trade-manager-demo.svg)
+
 ## Why It Exists
 
 Most bot dashboards are tied to one framework. Quantum Terminal Pro is built as a
