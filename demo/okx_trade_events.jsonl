@@ -1,0 +1,6 @@
+{"ts":1785399900,"symbol":"BTC/USDT:USDT","event":"ENTRY","detail":"Long opened after liquidity sweep and CHOCH confirmation."}
+{"ts":1785400800,"symbol":"BTC/USDT:USDT","event":"TP1_HIT","detail":"Partial close executed at first target."}
+{"ts":1785401940,"symbol":"ETH/USDT:USDT","event":"ENTRY","detail":"Short opened after bearish BOS and failed reclaim."}
+{"ts":1785403440,"symbol":"SOL/USDT:USDT","event":"ENTRY","detail":"Long opened from range support reaction."}
+{"ts":1785404820,"symbol":"SOL/USDT:USDT","event":"RISK_REVIEW","detail":"Range regime still active; dashboard marks position as WATCH."}
+{"ts":1785406200,"symbol":"BTC/USDT:USDT","event":"MANUAL_REVIEW","detail":"Move SL candidate detected after TP1 banked."}
