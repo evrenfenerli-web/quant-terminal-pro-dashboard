@@ -132,9 +132,10 @@ Best customer fit:
 
 Suggested commercial packaging:
 
-- Starter: dashboard source + docs.
-- Pro: dashboard + adapter examples + AWS deployment guide.
-- Setup: installation and configuration service.
+- Early Access: dashboard source, docs, and adapter contract for $149.
+- Pro: dashboard, adapter examples, AWS deployment guide, and updates for $249.
+- Setup Included: Pro plus guided VPS/AWS installation for $499.
+- Custom Adapter: exchange, broker, or bot-specific integration from $999.
 
 More positioning notes: [Selling Guide](docs/SELLING.md).
 
