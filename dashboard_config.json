@@ -17,8 +17,8 @@
     "exchange_id": "okx",
     "default_type": "swap",
     "sandbox_mode": false,
-    "positions_state_file": "/home/ubuntu/okx_bot/positions_state.json",
-    "manual_actions_file": "/home/ubuntu/okx_bot/manual_actions.jsonl",
+    "positions_state_file": "./demo/okx_positions_state.json",
+    "manual_actions_file": "./demo/okx_manual_actions.jsonl",
     "action_capabilities": [
       "close_100",
       "close_25",
@@ -35,9 +35,9 @@
       "SOL/USDT:USDT",
       "BNB/USDT:USDT"
     ],
-    "orders_state_file": "/home/ubuntu/okx_bot/orders_state.json",
-    "decision_state_file": "/home/ubuntu/okx_bot/decision_state.json",
-    "trade_events_file": "/home/ubuntu/okx_bot/trade_events.jsonl"
+    "orders_state_file": "./demo/okx_orders_state.json",
+    "decision_state_file": "./demo/okx_decision_state.json",
+    "trade_events_file": "./demo/okx_trade_events.jsonl"
   },
   "binance": {
     "enabled": false,
