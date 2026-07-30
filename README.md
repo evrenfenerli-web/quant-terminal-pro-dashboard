@@ -10,7 +10,19 @@ manual intervention commands.
 It is designed as an adapter-first dashboard: your bot can be simple or complex.
 If it can write state files and read a JSONL command queue, it can connect.
 
+## Product Screenshots
+
 ![Trade Manager demo](assets/screenshots/trade-manager-demo.svg)
+
+![Analytics demo](assets/screenshots/analytics-demo.svg)
+
+![Diagnostics demo](assets/screenshots/diagnostics-demo.svg)
+
+![Adapter contract demo](assets/screenshots/adapter-contract-demo.svg)
+
+![AWS install demo](assets/screenshots/install-demo.svg)
+
+![Pricing packages](assets/screenshots/pricing-demo.svg)
 
 ## Why It Exists
 
