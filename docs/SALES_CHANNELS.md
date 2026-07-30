@@ -1,5 +1,7 @@
 # Sales Channels
 
+Early Access checkout: https://app.lemonsqueezy.com/share/1257430
+
 Quantum Terminal Pro Dashboard should be sold as a professional control layer for
 existing trading bots, not as a profit-guaranteeing bot.
 
