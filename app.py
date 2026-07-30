@@ -158,6 +158,12 @@ def _position_payload(pos: Dict[str, Any], live_price: Optional[float]) -> Dict[
     size = float(pos.get("size", 0) or 0)
     side = pos.get("signal", "LONG")
     direction = 1 if side == "LONG" else -1
+    if live_price is None:
+        live_price = pos.get("last_price")
+    try:
+        live_price = float(live_price) if live_price is not None else None
+    except (TypeError, ValueError):
+        live_price = None
 
     pnl_pct = None
     pnl_usd = None
