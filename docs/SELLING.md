@@ -1,5 +1,7 @@
 # Selling Guide
 
+Early Access checkout: https://app.lemonsqueezy.com/share/1257430
+
 ## Positioning
 
 Sell Quantum Terminal Pro Dashboard as a professional control surface, not as a
