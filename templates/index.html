@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quant Terminal</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="with-sidebar" data-sidebar-pinned="1" data-refresh="{{ refresh_seconds }}">
+  {% include 'sidebar.html' %}
+  <div class="app-shell">
+
+  <div class="ticker" id="ticker" aria-label="Live price ticker">
+    <div class="ticker__track" id="tickerTrack">
+      <span class="ticker__item faint">loading…</span>
+    </div>
+  </div>
+
+  <div class="topbar">
+    <div class="wordmark">QUANT <span>TERMINAL</span></div>
+    <div class="top-actions"><a class="terminal-btn" href="{{ url_for('analytics_page') }}">Analytics</a><a class="terminal-btn" href="{{ url_for('manager_page') }}">Trade Manager</a><a class="terminal-btn" href="{{ url_for('workspace_page') }}">Workspace</a><div class="sync-status"><span class="pulse"></span><span id="syncTime">connecting…</span></div></div>
+  </div>
+
+  <div class="wrap">
+
+    {% for market in markets %}
+    <div class="section-label">{{ market.label }}</div>
+    <div class="grid" data-market="{{ market.key }}">
+      {% for s in market.symbols %}
+      <a class="card" id="card-{{ market.key }}-{{ s.slug }}"
+         href="{{ url_for('chart_page', market_key=market.key, slug=s.slug) }}"
+         data-market="{{ market.key }}" data-symbol="{{ s.symbol }}">
+        <div class="card__top">
+          <span class="card__symbol">{{ s.symbol }}</span>
+          <span class="card__position-flag" style="display:none;" title="Open position"></span>
+        </div>
+        <div>
+          <span class="card__price mono">—</span>
+          <span class="card__change mono">—</span>
+        </div>
+        <div class="card__bottom">
+          <span class="badge" style="color:#8B8F98;">—</span>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+    {% else %}
+    <div class="empty-state">
+      No market is enabled. Set "enabled": true under okx / alpaca in
+      dashboard_config.json and add at least one symbol.
+    </div>
+    {% endfor %}
+
+    <div class="section-label">Open Positions<span class="faint" id="posCount"></span></div>
+    <div id="positionsWrap">
+      <div class="empty-state">loading…</div>
+    </div>
+
+  </div>
+
+  <script src="{{ url_for('static', filename='dashboard.js') }}"></script>
+  </div>
+  <script src="{{ url_for('static', filename='sidebar.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Workspace · Quantum Terminal Pro</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+</head>
+<body class="with-sidebar" data-refresh="{{ refresh_seconds }}"
+      data-default-layout="{{ default_layout }}"
+      data-sidebar-pinned="{{ '1' if sidebar_default_pinned else '0' }}">
+  {% include 'sidebar.html' %}
+
+  <div class="app-shell">
+    <div class="topbar workspace-topbar">
+      <div>
+        <div class="wordmark">QUANTUM <span>WORKSPACE</span></div>
+        <div class="workspace-tabs" id="workspaceTabs"></div>
+      </div>
+      <div class="top-actions">
+        <button class="terminal-btn" id="newWorkspaceBtn">+ Workspace</button>
+        <button class="terminal-btn" id="saveWorkspaceBtn">Save</button>
+        <span class="sync-status"><span class="pulse"></span><span id="workspaceSync">connecting…</span></span>
+      </div>
+    </div>
+
+    <main class="workspace-wrap">
+      <section class="workspace-toolbar">
+        <label>Layout
+          <select id="layoutSelect">
+            <option value="1">1 chart</option>
+            <option value="2">2 charts</option>
+            <option value="4">4 charts</option>
+            <option value="6">6 charts</option>
+            <option value="8">8 charts</option>
+          </select>
+        </label>
+        <label>Timeframe
+          <select id="workspaceTimeframe">
+            {% for tf in timeframes %}<option value="{{ tf }}">{{ tf }}</option>{% endfor %}
+          </select>
+        </label>
+        <button class="terminal-btn active" id="syncChartsBtn">Sync symbols: ON</button>
+        <button class="terminal-btn" id="resetWorkspaceBtn">Reset workspace</button>
+      </section>
+
+      <div class="workspace-layout">
+        <aside class="pro-watchlist">
+          <div class="panel-heading">
+            <span>WATCHLIST PRO</span>
+            <input id="watchlistSearch" placeholder="Search">
+          </div>
+          <div class="watchlist-tabs">
+            <button class="active" data-filter="all">All</button>
+            <button data-filter="position">Positions</button>
+            <button data-filter="trend">Trend</button>
+            <button data-filter="strong">Strong</button>
+          </div>
+          <div id="watchlistRows" class="watchlist-rows"></div>
+        </aside>
+
+        <section class="workspace-main">
+          <div id="multiChartGrid" class="multi-chart-grid"></div>
+
+          <div class="workspace-lower-grid">
+            <article class="analytics-panel">
+              <h2>Market Regime Map</h2>
+              <div id="regimeMap" class="regime-map"></div>
+            </article>
+            <article class="analytics-panel">
+              <h2>Market Heatmap</h2>
+              <div id="marketHeatmap" class="market-heatmap"></div>
+            </article>
+            <article class="analytics-panel analytics-panel--wide">
+              <h2>Correlation Matrix</h2>
+              <div class="matrix-controls">
+                <select id="correlationMarket">
+                  {% for market in markets %}<option value="{{ market.key }}">{{ market.label }}</option>{% endfor %}
+                </select>
+              </div>
+              <div id="correlationMatrix" class="correlation-matrix"></div>
+            </article>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    window.QUANT_MARKETS = {{ markets|tojson }};
+  </script>
+  <script src="{{ url_for('static', filename='sidebar.js') }}"></script>
+  <script src="{{ url_for('static', filename='workspace.js') }}"></script>
+</body>
+</html>

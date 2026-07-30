@@ -1,0 +1,10 @@
+venv/
+__pycache__/
+*.pyc
+*.log
+*.jsonl
+manual_actions.jsonl
+manual_actions.processed.jsonl
+dashboard_config.local.json
+.env
+.DS_Store

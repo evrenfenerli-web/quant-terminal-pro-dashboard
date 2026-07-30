@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trade Manager · Quant Terminal</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="with-sidebar" data-sidebar-pinned="1" data-refresh="{{ refresh_seconds }}">
+  {% include 'sidebar.html' %}
+  <div class="app-shell">
+  <div class="topbar">
+    <div class="wordmark">QUANT <span>TRADE MANAGER</span></div>
+    <div class="top-actions">
+      <a class="terminal-btn" href="{{ url_for('index') }}">Terminal</a>
+      <a class="terminal-btn" href="{{ url_for('analytics_page') }}">Analytics</a>
+      <span class="sync-status"><span class="pulse"></span><span id="managerSync">connecting…</span></span>
+    </div>
+  </div>
+
+  <main class="wrap manager-page">
+    <div class="analytics-toolbar">
+      <label>Bot
+        <select id="managerBot">
+          {% for bot in bots %}<option value="{{ bot.key }}">{{ bot.label }}</option>{% endfor %}
+        </select>
+      </label>
+      <button class="terminal-btn" id="managerRefresh">Refresh</button>
+      <span class="safety-badge" id="managerSafetyBadge">CONNECTING…</span>
+    </div>
+
+    <section class="manager-summary" id="managerSummary"></section>
+
+    <div class="section-label">Open Positions <span id="managerPositionCount" class="faint"></span></div>
+    <section id="managerPositions" class="manager-position-grid">
+      <div class="empty-state">loading…</div>
+    </section>
+
+    <div class="section-label">Open / Pending Orders <span id="managerOrderCount" class="faint"></span></div>
+    <section class="analytics-panel" id="managerOrders"><div class="empty-state">loading…</div></section>
+
+    <div class="section-label">Trade Event Timeline</div>
+    <section class="analytics-panel" id="managerEvents"><div class="empty-state">loading…</div></section>
+  </main>
+
+  <dialog id="explainDialog" class="terminal-dialog">
+    <button class="dialog-close terminal-btn" id="closeExplainDialog">Close</button>
+    <div id="explainDialogContent"></div>
+  </dialog>
+
+  <script src="{{ url_for('static', filename='manager.js') }}"></script>
+  </div>
+  <script src="{{ url_for('static', filename='sidebar.js') }}"></script>
+</body>
+</html>

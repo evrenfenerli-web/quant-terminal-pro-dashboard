@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Funding Intelligence · Quantum Terminal Pro</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+</head>
+<body class="with-sidebar" data-refresh="{{ refresh_seconds }}">
+  {% include "sidebar.html" %}
+  <div class="app-shell">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">PHASE 5 · FUNDING ENGINE V2</p>
+        <h1>Funding Intelligence</h1>
+        <p class="subtitle">Symbol-normalized baselines · Z-score · Crowding · Cost attribution</p>
+      </div>
+      <div class="top-actions">
+        <a class="terminal-btn" href="{{ url_for('exit_report_page') }}">Exit Report</a>
+        <span class="sync-status"><span class="pulse"></span><span id="fundingSync">connecting…</span></span>
+      </div>
+    </header>
+    <main class="wrap funding-page">
+      <div class="analytics-toolbar">
+        <label>Bot
+          <select id="fundingBot">{% for bot in bots %}<option value="{{ bot.key }}">{{ bot.label }}</option>{% endfor %}</select>
+        </label>
+        <label>Sample
+          <select id="fundingSample">
+            <option value="">All records</option><option value="100">Last 100</option>
+            <option value="250">Last 250</option><option value="500">Last 500</option>
+          </select>
+        </label>
+        <button class="terminal-btn" id="refreshFunding">Refresh</button>
+        <a class="terminal-btn" id="fundingCsvExport" href="#">CSV Export</a>
+      </div>
+      <section class="kpi-grid" id="fundingKpis"></section>
+      <div class="funding-method" id="fundingMethod"></div>
+      <section class="analytics-grid">
+        <article class="analytics-panel analytics-panel--wide"><h2>Current Funding Map</h2><div id="fundingMap" class="funding-map"></div></article>
+        <article class="analytics-panel analytics-panel--wide"><h2>Normalized Funding Z-Score</h2><div id="fundingTimeline" class="analytics-chart"></div></article>
+        <article class="analytics-panel"><h2>Funding Classes</h2><div id="fundingClasses" class="analytics-chart"></div></article>
+        <article class="analytics-panel"><h2>Funding Cost by Symbol</h2><div id="fundingCosts"></div></article>
+        <article class="analytics-panel analytics-panel--wide"><h2>Current Symbol Diagnostics</h2><div id="fundingTable"></div></article>
+        <article class="analytics-panel analytics-panel--wide"><h2>Missing Baselines</h2><div id="missingBaselines"></div></article>
+      </section>
+      <p class="formula-note">Funding Engine v2 is analytics-only. It does not alter cached funding, charged-cost calculation, K7, entries, exits, or orders.</p>
+    </main>
+  </div>
+  <script src="{{ url_for('static', filename='sidebar.js') }}"></script>
+  <script src="{{ url_for('static', filename='funding.js') }}"></script>
+</body>
+</html>

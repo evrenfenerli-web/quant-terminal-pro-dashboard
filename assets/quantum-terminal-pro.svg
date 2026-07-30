@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="520" viewBox="0 0 1400 520" role="img" aria-label="Quantum Terminal Pro Dashboard">
+  <defs>
+    <radialGradient id="glow" cx="50%" cy="60%" r="70%">
+      <stop offset="0%" stop-color="#6920a8" stop-opacity="0.85"/>
+      <stop offset="45%" stop-color="#271033" stop-opacity="0.92"/>
+      <stop offset="100%" stop-color="#08040d"/>
+    </radialGradient>
+    <linearGradient id="text" x1="0%" x2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="45%" stop-color="#d8d4e7"/>
+      <stop offset="100%" stop-color="#9b91b9"/>
+    </linearGradient>
+    <filter id="softGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="1400" height="520" fill="url(#glow)"/>
+  <g opacity="0.16" stroke="#a855f7" fill="none">
+    <circle cx="700" cy="235" r="128"/>
+    <circle cx="700" cy="235" r="184"/>
+    <path d="M216 112C372 78 468 98 598 174c126 74 231 84 366 35 83-31 151-36 220-17"/>
+    <path d="M188 376c129-88 259-102 388-42 126 59 256 44 385-43 89-60 175-76 259-49"/>
+  </g>
+  <text x="700" y="246" text-anchor="middle" font-family="Arial Black, Arial, sans-serif" font-size="112" font-weight="900" letter-spacing="7" fill="url(#text)" filter="url(#softGlow)">QUANTUM</text>
+  <text x="700" y="334" text-anchor="middle" font-family="Arial, sans-serif" font-size="46" font-weight="300" letter-spacing="16" fill="#f0c7ff" filter="url(#softGlow)">TERMINAL PRO</text>
+  <text x="700" y="394" text-anchor="middle" font-family="Consolas, monospace" font-size="22" letter-spacing="4" fill="#b7a4ce">BOT-AGNOSTIC TRADE CONTROL DASHBOARD</text>
+</svg>

@@ -1,0 +1,15 @@
+[Unit]
+Description=Quant Terminal — live trading dashboard
+After=network.target
+
+[Service]
+Type=simple
+# Adjust the user and paths to match your own server:
+User=ubuntu
+WorkingDirectory=/home/ubuntu/quant/dashboard
+ExecStart=/home/ubuntu/quant/dashboard/venv/bin/gunicorn -w 1 -b 0.0.0.0:8050 --timeout 60 app:app
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

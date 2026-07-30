@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Exit Intelligence · Quantum Terminal Pro</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+</head>
+<body class="with-sidebar" data-refresh="{{ refresh_seconds }}">
+  {% include "sidebar.html" %}
+  <div class="app-shell">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">PHASE 4 · EXIT INTELLIGENCE</p>
+        <h1>Exit Report</h1>
+        <p class="subtitle">MFE/MAE · Opportunity Lost · Capture Ratio · TP Funnel · Shadow Exit</p>
+      </div>
+      <div class="top-actions">
+        <a class="terminal-btn" href="{{ url_for('analytics_page') }}">Analytics</a>
+        <span class="sync-status"><span class="pulse"></span><span id="exitSync">connecting…</span></span>
+      </div>
+    </header>
+
+    <main class="wrap exit-report-page">
+      <div class="analytics-toolbar">
+        <label>Bot
+          <select id="exitBot">
+            {% for bot in bots %}<option value="{{ bot.key }}">{{ bot.label }}</option>{% endfor %}
+          </select>
+        </label>
+        <label>Sample
+          <select id="exitSample">
+            <option value="">All trades</option>
+            <option value="50">Last 50</option>
+            <option value="100">Last 100</option>
+            <option value="250">Last 250</option>
+            <option value="500">Last 500</option>
+          </select>
+        </label>
+        <button class="terminal-btn" id="refreshExitReport">Refresh</button>
+        <a class="terminal-btn" id="exitCsvExport" href="#">CSV Export</a>
+      </div>
+
+      <section class="kpi-grid exit-kpi-grid" id="exitKpis"></section>
+
+      <section class="exit-funnel" id="tpFunnel"></section>
+
+      <section class="analytics-grid">
+        <article class="analytics-panel"><h2>MFE vs Exit R</h2><div id="mfeScatter" class="analytics-chart"></div></article>
+        <article class="analytics-panel"><h2>Opportunity Lost by Exit</h2><div id="lostByReason" class="analytics-chart"></div></article>
+        <article class="analytics-panel"><h2>Capture Distribution</h2><div id="captureDistribution" class="analytics-chart"></div></article>
+        <article class="analytics-panel"><h2>MFE / MAE Distribution</h2><div id="excursionDistribution"></div></article>
+        <article class="analytics-panel analytics-panel--wide"><h2>Exit Reason Performance</h2><div id="exitReasonTable"></div></article>
+        <article class="analytics-panel analytics-panel--wide"><h2>Exit Subreason Diagnostics</h2><div id="exitSubreasonTable"></div></article>
+        <article class="analytics-panel"><h2>Shadow Exit Checkpoints</h2><div id="shadowByBars"></div></article>
+        <article class="analytics-panel"><h2>Shadow Exit by Reason</h2><div id="shadowByReason"></div></article>
+        <article class="analytics-panel analytics-panel--wide"><h2>Exit Trade Explorer</h2><div id="exitTradeExplorer"></div></article>
+      </section>
+
+      <p class="formula-note" id="formulaNote"></p>
+    </main>
+  </div>
+  <script src="{{ url_for('static', filename='sidebar.js') }}"></script>
+  <script src="{{ url_for('static', filename='exit_report.js') }}"></script>
+</body>
+</html>

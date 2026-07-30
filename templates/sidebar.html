@@ -1,0 +1,18 @@
+<aside class="terminal-sidebar {% if sidebar_default_pinned %}pinned{% endif %}" id="terminalSidebar">
+  <div class="sidebar-head">
+    <div class="sidebar-brand">Q</div>
+    <button class="sidebar-pin {% if sidebar_default_pinned %}active{% endif %}" id="sidebarPin" title="Pin sidebar">📌</button>
+  </div>
+  <nav class="sidebar-nav">
+    <a href="{{ url_for('index') }}"><span>⌂</span><em>Overview</em></a>
+    <a href="{{ url_for('workspace_page') }}"><span>▦</span><em>Workspace</em></a>
+    <a href="{{ url_for('manager_page') }}"><span>◫</span><em>Trade Manager</em></a>
+    <a href="{{ url_for('analytics_page') }}"><span>▥</span><em>Analytics</em></a>
+    <a href="{{ url_for('exit_report_page') }}"><span>↗</span><em>Exit Report</em></a>
+    <a href="{{ url_for('funding_page') }}"><span>ƒ</span><em>Funding</em></a>
+    <a href="{{ url_for('diagnostics_page') }}"><span>✓</span><em>Diagnostics</em></a>
+  </nav>
+  <div class="sidebar-foot">
+    <span class="sidebar-state">PINNED</span>
+  </div>
+</aside>

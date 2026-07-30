@@ -1,0 +1,196 @@
+{
+  "port": 8050,
+  "refresh_seconds": 15,
+  "primary_timeframe": "15m",
+  "secondary_timeframe": "1h",
+  "tertiary_timeframe": "4h",
+  "candles_shown": 180,
+  "regime_thresholds": {
+    "adx_chop": 12,
+    "adx_range": 18,
+    "adx_neutral": 25,
+    "adx_strong": 35
+  },
+  "okx": {
+    "enabled": true,
+    "label": "OKX \u00b7 Perpetual Futures",
+    "exchange_id": "okx",
+    "default_type": "swap",
+    "sandbox_mode": false,
+    "positions_state_file": "/home/ubuntu/okx_bot/positions_state.json",
+    "manual_actions_file": "/home/ubuntu/okx_bot/manual_actions.jsonl",
+    "action_capabilities": [
+      "close_100",
+      "close_25",
+      "close_50",
+      "close_75",
+      "move_sl",
+      "move_tp",
+      "break_even",
+      "emergency_close"
+    ],
+    "symbols": [
+      "BTC/USDT:USDT",
+      "ETH/USDT:USDT",
+      "SOL/USDT:USDT",
+      "BNB/USDT:USDT"
+    ],
+    "orders_state_file": "/home/ubuntu/okx_bot/orders_state.json",
+    "decision_state_file": "/home/ubuntu/okx_bot/decision_state.json",
+    "trade_events_file": "/home/ubuntu/okx_bot/trade_events.jsonl"
+  },
+  "binance": {
+    "enabled": false,
+    "label": "Binance \u00b7 USDT Futures",
+    "exchange_id": "binance",
+    "default_type": "future",
+    "sandbox_mode": false,
+    "positions_state_file": "/home/ubuntu/binance_bot/positions_state.json",
+    "manual_actions_file": "/home/ubuntu/binance_bot/manual_actions.jsonl",
+    "symbols": [
+      "BTC/USDT",
+      "ETH/USDT",
+      "SOL/USDT"
+    ],
+    "orders_state_file": "/home/ubuntu/binance_bot/orders_state.json",
+    "decision_state_file": "/home/ubuntu/binance_bot/decision_state.json",
+    "trade_events_file": "/home/ubuntu/binance_bot/trade_events.jsonl",
+    "action_capabilities": [
+      "close_100",
+      "close_25",
+      "close_50",
+      "close_75",
+      "move_sl",
+      "move_tp",
+      "break_even",
+      "emergency_close"
+    ]
+  },
+  "bybit": {
+    "enabled": false,
+    "label": "Bybit \u00b7 USDT Perpetual",
+    "exchange_id": "bybit",
+    "default_type": "swap",
+    "sandbox_mode": false,
+    "positions_state_file": "/home/ubuntu/bybit_bot/positions_state.json",
+    "manual_actions_file": "/home/ubuntu/bybit_bot/manual_actions.jsonl",
+    "symbols": [
+      "BTC/USDT:USDT",
+      "ETH/USDT:USDT",
+      "SOL/USDT:USDT"
+    ],
+    "orders_state_file": "/home/ubuntu/bybit_bot/orders_state.json",
+    "decision_state_file": "/home/ubuntu/bybit_bot/decision_state.json",
+    "trade_events_file": "/home/ubuntu/bybit_bot/trade_events.jsonl",
+    "action_capabilities": [
+      "close_100",
+      "close_25",
+      "close_50",
+      "close_75",
+      "move_sl",
+      "move_tp",
+      "break_even",
+      "emergency_close"
+    ]
+  },
+  "alpaca": {
+    "enabled": false,
+    "label": "Alpaca \u00b7 US Equities",
+    "api_key": "",
+    "api_secret": "",
+    "positions_state_file": "/home/ubuntu/alpaca_bot/positions_state.json",
+    "manual_actions_file": "/home/ubuntu/alpaca_bot/manual_actions.jsonl",
+    "action_capabilities": [
+      "close_100",
+      "close_25",
+      "close_50",
+      "close_75",
+      "move_sl",
+      "move_tp",
+      "break_even",
+      "emergency_close"
+    ],
+    "symbols": [
+      "SPY",
+      "QQQ",
+      "AAPL",
+      "MSFT",
+      "NVDA",
+      "TSLA"
+    ],
+    "orders_state_file": "/home/ubuntu/alpaca_bot/orders_state.json",
+    "decision_state_file": "/home/ubuntu/alpaca_bot/decision_state.json",
+    "trade_events_file": "/home/ubuntu/alpaca_bot/trade_events.jsonl"
+  },
+  "timeframes": [
+    "5m",
+    "15m",
+    "1h",
+    "4h"
+  ],
+  "analytics_refresh_seconds": 30,
+  "analytics": {
+    "okx": {
+      "trade_analytics_file": "/home/ubuntu/okx_bot/trade_analytics.jsonl",
+      "exit_analytics_file": "/home/ubuntu/okx_bot/exit_analytics.jsonl",
+      "rejected_analytics_file": "/home/ubuntu/okx_bot/rejected_analytics.jsonl",
+      "funding_analytics_file": "/home/ubuntu/okx_bot/funding_analytics.jsonl"
+    },
+    "alpaca": {
+      "trade_analytics_file": "/home/ubuntu/alpaca_bot/trade_analytics.jsonl",
+      "exit_analytics_file": "/home/ubuntu/alpaca_bot/exit_analytics.jsonl",
+      "rejected_analytics_file": "/home/ubuntu/alpaca_bot/rejected_analytics.jsonl"
+    }
+  },
+  "phase2": {
+    "trade_manager_enabled": true,
+    "manual_actions_enabled": true,
+    "manual_actions_file": "./manual_actions.jsonl",
+    "show_disabled_action_buttons": true,
+    "max_timeline_events": 1000
+  },
+  "phase3": {
+    "workspace_enabled": true,
+    "sidebar_default_pinned": true,
+    "multi_chart_default_layout": 4,
+    "multi_chart_max_panels": 8,
+    "correlation_lookback": 120,
+    "heatmap_refresh_seconds": 30
+  },
+  "phase4": {
+    "exit_report_enabled": true,
+    "exit_report_refresh_seconds": 30,
+    "derive_missing_exit_metrics": true,
+    "exit_quality_capture_weight": 0.75,
+    "exit_quality_mae_weight": 0.25
+  },
+  "phase5": {
+    "enabled": true,
+    "funding_report_refresh_seconds": 30,
+    "baseline_windows": [90, 30, 8],
+    "elevated_z": 1.5,
+    "extreme_z": 2.5,
+    "min_std": 1e-08,
+    "baseline_symbols": [
+      "BTC/USDT:USDT",
+      "ETH/USDT:USDT",
+      "LINK/USDT:USDT",
+      "XRP/USDT:USDT",
+      "SOL/USDT:USDT",
+      "SUI/USDT:USDT",
+      "ADA/USDT:USDT"
+    ]
+  },
+  "phase6": {
+    "enabled": true,
+    "diagnostics_refresh_seconds": 60,
+    "stale_after_seconds": 300,
+    "allowed_entry_regimes": ["STRONG_BEAR", "STRONG_BULL", "TREND_DOWN", "TREND_UP"],
+    "forbidden_entry_regimes": ["CHOP", "NEUTRAL", "RANGE", "SHOCK"],
+    "bars_held_buckets": [5, 10, 20, 50],
+    "required_trade_fields": [
+      "trade_id", "symbol", "signal", "regime", "exit_reason", "exit_r",
+      "mfe_r", "mae_r", "bars_held", "tp1_hit", "tp2_hit", "tp3_hit"
+    ]
+  }
+}

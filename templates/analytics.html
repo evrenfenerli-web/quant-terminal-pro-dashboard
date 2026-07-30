@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Analytics · Quant Terminal</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+</head>
+<body class="with-sidebar" data-sidebar-pinned="1" data-refresh="{{ refresh_seconds }}">
+  {% include 'sidebar.html' %}
+  <div class="app-shell">
+  <div class="topbar">
+    <div class="wordmark">QUANT <span>ANALYTICS</span></div>
+    <div class="top-actions">
+      <a class="terminal-btn" href="{{ url_for('index') }}">Terminal</a><a class="terminal-btn" href="{{ url_for('manager_page') }}">Trade Manager</a><a class="terminal-btn" href="{{ url_for('workspace_page') }}">Workspace</a><a class="terminal-btn" href="{{ url_for('exit_report_page') }}">Exit Report</a>
+      <span class="sync-status"><span class="pulse"></span><span id="analyticsSync">connecting…</span></span>
+    </div>
+  </div>
+
+  <main class="wrap analytics-page">
+    <div class="analytics-toolbar">
+      <label>Bot
+        <select id="analyticsBot">
+          {% for bot in bots %}<option value="{{ bot.key }}">{{ bot.label }}</option>{% endfor %}
+        </select>
+      </label>
+      <label>Sample
+        <select id="analyticsSample">
+          <option value="">All trades</option>
+          <option value="30">Last 30</option>
+          <option value="50">Last 50</option>
+          <option value="100">Last 100</option>
+          <option value="250">Last 250</option>
+        </select>
+      </label>
+      <button class="terminal-btn" id="refreshAnalytics">Refresh</button>
+      <a class="terminal-btn" id="csvExport" href="#">CSV</a>
+      <a class="terminal-btn" id="jsonExport" href="#">JSON</a>
+    </div>
+
+    <section class="kpi-grid" id="kpiGrid"></section>
+
+    <section class="analytics-grid">
+      <article class="analytics-panel"><h2>Equity Curve</h2><div id="equityChart" class="analytics-chart"></div></article>
+      <article class="analytics-panel"><h2>Drawdown</h2><div id="drawdownChart" class="analytics-chart"></div></article>
+      <article class="analytics-panel"><h2>Regime Dashboard</h2><div id="regimeTable"></div></article>
+      <article class="analytics-panel"><h2>Coin Dashboard</h2><div id="coinTable"></div></article>
+      <article class="analytics-panel"><h2>Exit Dashboard</h2><div id="exitTable"></div></article>
+      <article class="analytics-panel"><h2>Opportunity Lost</h2><div id="lostChart" class="analytics-chart"></div></article>
+      <article class="analytics-panel"><h2>Capture Ratio</h2><div id="captureChart" class="analytics-chart"></div></article>
+      <article class="analytics-panel"><h2>Counter Trend</h2><div id="counterPanel"></div></article>
+      <article class="analytics-panel"><h2>Rejected Trades</h2><div id="rejectedChart" class="analytics-chart"></div></article>
+      <article class="analytics-panel"><h2>Smart Exit K1–K9</h2><div id="smartExitTable"></div></article>
+      <article class="analytics-panel"><h2>Near Exit</h2><div id="nearExitPanel"></div></article>
+      <article class="analytics-panel analytics-panel--wide"><h2>Trade Explorer</h2><div id="tradeExplorer"></div></article>
+    </section>
+  </main>
+  <script src="{{ url_for('static', filename='analytics.js') }}"></script>
+  </div>
+  <script src="{{ url_for('static', filename='sidebar.js') }}"></script>
+</body>
+</html>

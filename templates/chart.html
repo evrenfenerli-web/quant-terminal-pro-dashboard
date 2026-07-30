@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ symbol }} · Quant Terminal</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+</head>
+<body class="with-sidebar" data-sidebar-pinned="1" data-refresh="{{ refresh_seconds }}" data-market="{{ market_key }}" data-slug="{{ slug }}" data-symbol="{{ symbol }}">
+  {% include 'sidebar.html' %}
+  <div class="app-shell">
+
+  <div class="ticker" id="ticker">
+    <div class="ticker__track" id="tickerTrack">
+      <span class="ticker__item faint">loading…</span>
+    </div>
+  </div>
+
+  <div class="topbar">
+    <div class="wordmark">QUANT <span>TERMINAL</span></div>
+    <div class="sync-status"><span class="pulse"></span><span id="syncTime">connecting…</span></div>
+  </div>
+
+  <div class="wrap">
+    <div class="page-actions"><a href="{{ url_for('index') }}" class="back-link">← all symbols</a><a href="{{ url_for('analytics_page') }}" class="back-link">analytics</a><a href="{{ url_for('manager_page') }}" class="back-link">trade manager →</a></div>
+
+    <div class="chart-header">
+      <div>
+        <div class="chart-title__symbol mono">{{ symbol }}</div>
+        <div class="chart-title__market">{{ market_label }} · {{ timeframe }}</div>
+      </div>
+
+      <div class="stat-strip">
+        <div>
+          <span class="stat-label">Price</span>
+          <span class="stat-value" id="statPrice">—</span>
+          <span class="stat-value mono" id="statChange" style="font-size:12px;"></span>
+        </div>
+        <div>
+          <span class="stat-label">Regime</span>
+          <span id="statRegime" class="badge" style="color:#8B8F98;">—</span>
+        </div>
+        <div>
+          <span class="stat-label">ADX</span>
+          <span class="stat-value" id="statAdx">—</span>
+        </div>
+        <div>
+          <span class="stat-label">RSI</span>
+          <span class="stat-value" id="statRsi">—</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="chart-toolbar">
+      <label>Timeframe
+        <select id="timeframeSelect">
+          {% for tf in timeframes %}<option value="{{ tf }}" {% if tf == timeframe %}selected{% endif %}>{{ tf }}</option>{% endfor %}
+        </select>
+      </label>
+      <button id="autoFollowBtn" class="terminal-btn active" type="button">Auto Follow: ON</button>
+      <button id="resetViewBtn" class="terminal-btn" type="button">Reset View</button>
+      <button id="fullscreenBtn" class="terminal-btn" type="button">Fullscreen</button>
+      <span class="faint mono" id="viewState">live view</span>
+    </div>
+    <div class="chart-panel" id="chartPanel">
+      <div id="priceChart"></div>
+    </div>
+
+    <div id="positionPanel"></div>
+  </div>
+
+  <script src="{{ url_for('static', filename='dashboard.js') }}"></script>
+  <script src="{{ url_for('static', filename='chart.js') }}"></script>
+  </div>
+  <script src="{{ url_for('static', filename='sidebar.js') }}"></script>
+</body>
+</html>

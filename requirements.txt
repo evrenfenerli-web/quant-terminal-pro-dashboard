@@ -1,0 +1,6 @@
+flask>=3.0
+pandas>=2.0
+numpy>=1.26
+ccxt>=4.3
+alpaca-py>=0.30
+gunicorn>=22.0

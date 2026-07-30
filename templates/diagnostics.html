@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>System Diagnostics · Quantum Terminal Pro</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+</head>
+<body class="with-sidebar" data-refresh="{{ refresh_seconds }}">
+  {% include "sidebar.html" %}
+  <div class="app-shell">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">PHASE 6 · FINAL DIAGNOSTICS</p>
+        <h1>System Diagnostics</h1>
+        <p class="subtitle">Coin · Time · BTC Filter · Regime · Config · Data Health</p>
+      </div>
+      <div class="top-actions">
+        <a class="terminal-btn" href="{{ url_for('funding_page') }}">Funding</a>
+        <span class="sync-status"><span class="pulse"></span><span id="diagSync">connecting…</span></span>
+      </div>
+    </header>
+    <main class="wrap diagnostics-page">
+      <div class="analytics-toolbar">
+        <label>Bot<select id="diagBot">{% for bot in bots %}<option value="{{ bot.key }}">{{ bot.label }}</option>{% endfor %}</select></label>
+        <label>Sample<select id="diagSample"><option value="">All trades</option><option value="100">Last 100</option><option value="250">Last 250</option><option value="500">Last 500</option></select></label>
+        <button class="terminal-btn" id="refreshDiagnostics">Run diagnostics</button>
+        <a class="terminal-btn" href="/api/health" target="_blank">Health JSON</a>
+      </div>
+      <section class="kpi-grid" id="diagKpis"></section>
+      <section class="analytics-grid">
+        <article class="analytics-panel analytics-panel--wide"><h2>Coin Analytics</h2><div id="coinDiagnostics"></div></article>
+        <article class="analytics-panel"><h2>Bars Held</h2><div id="barsHeldChart" class="analytics-chart"></div></article>
+        <article class="analytics-panel"><h2>UTC Entry Hour</h2><div id="hourChart" class="analytics-chart"></div></article>
+        <article class="analytics-panel analytics-panel--wide"><h2>Regime Engine Audit</h2><div id="regimeDiagnostics"></div></article>
+        <article class="analytics-panel"><h2>BTC Filter Debug</h2><div id="btcDiagnostics"></div></article>
+        <article class="analytics-panel"><h2>Exit Trigger Priority</h2><div id="priorityDiagnostics"></div></article>
+        <article class="analytics-panel analytics-panel--wide"><h2>Trade Data Quality</h2><div id="dataQuality"></div></article>
+        <article class="analytics-panel"><h2>Symbol Config Transition</h2><div id="symbolConfig"></div></article>
+        <article class="analytics-panel"><h2>Config Audit</h2><div id="configAudit"></div></article>
+        <article class="analytics-panel analytics-panel--wide"><h2>Source Health</h2><div id="sourceHealth"></div></article>
+      </section>
+    </main>
+  </div>
+  <script src="{{ url_for('static', filename='sidebar.js') }}"></script>
+  <script src="{{ url_for('static', filename='diagnostics.js') }}"></script>
+</body>
+</html>
