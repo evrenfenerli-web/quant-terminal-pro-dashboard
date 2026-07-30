@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="900" viewBox="0 0 1440 900" role="img" aria-label="Quantum Terminal Pro diagnostics demo">
+  <defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#090914"/><stop offset="1" stop-color="#160b22"/></linearGradient><style>.s{font-family:Inter,Arial,sans-serif}.m{font-family:Consolas,monospace}.t{fill:#f5f7ff}.u{fill:#8f98ad}.g{fill:#56e39f}.w{fill:#ffcf6e}.r{fill:#ff6f8e}.p{fill:#151b2c;stroke:#303956}.ok{fill:#102820;stroke:#2cc779}.warn{fill:#2b2414;stroke:#ffcf6e}.fail{fill:#2b1624;stroke:#ff6f8e}</style></defs>
+  <rect width="1440" height="900" fill="url(#bg)"/>
+  <rect x="70" y="65" width="1300" height="770" rx="20" fill="#0d1120" stroke="#313a55"/>
+  <text x="120" y="130" class="s t" font-size="32" font-weight="800">DIAGNOSTICS CENTER</text>
+  <text x="120" y="165" class="m u" font-size="15">State freshness · file health · manual actions · adapter capabilities · regime compliance</text>
+  <rect x="120" y="210" width="360" height="105" rx="14" class="ok"/><text x="150" y="250" class="m g" font-size="16" font-weight="800">SYSTEM HEALTH</text><text x="150" y="292" class="s t" font-size="34" font-weight="800">PASS</text>
+  <rect x="510" y="210" width="360" height="105" rx="14" class="warn"/><text x="540" y="250" class="m w" font-size="16" font-weight="800">STALE WATCH</text><text x="540" y="292" class="s t" font-size="34" font-weight="800">2 WARN</text>
+  <rect x="900" y="210" width="360" height="105" rx="14" class="ok"/><text x="930" y="250" class="m g" font-size="16" font-weight="800">MANUAL QUEUE</text><text x="930" y="292" class="s t" font-size="34" font-weight="800">ENABLED</text>
+  <rect x="120" y="360" width="1140" height="390" rx="14" class="p"/>
+  <text x="150" y="405" class="s t" font-size="22" font-weight="800">Adapter Audit</text>
+  <g class="m" font-size="15">
+    <text x="150" y="465" class="g">PASS</text><text x="230" y="465" class="t">positions_state.json</text><text x="540" y="465" class="u">fresh · 3 open positions</text>
+    <text x="150" y="525" class="g">PASS</text><text x="230" y="525" class="t">manual_actions.jsonl</text><text x="540" y="525" class="u">queue writable · bot has final authority</text>
+    <text x="150" y="585" class="w">WARN</text><text x="230" y="585" class="t">trade_events.jsonl</text><text x="540" y="585" class="u">last update 4m ago · below fail threshold</text>
+    <text x="150" y="645" class="g">PASS</text><text x="230" y="645" class="t">action_capabilities</text><text x="540" y="645" class="u">close, partial, SL/TP move, break-even, emergency</text>
+    <text x="150" y="705" class="g">PASS</text><text x="230" y="705" class="t">regime guard</text><text x="540" y="705" class="u">CHOP/RANGE/SHOCK entries monitored</text>
+  </g>
+</svg>
