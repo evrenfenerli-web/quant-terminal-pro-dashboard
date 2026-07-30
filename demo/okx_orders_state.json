@@ -1,0 +1,22 @@
+{
+  "orders": [
+    {
+      "id": "ord-demo-btc-tp2",
+      "symbol": "BTC/USDT:USDT",
+      "side": "sell",
+      "type": "take_profit_limit",
+      "price": 66222.75,
+      "amount": 0.035599,
+      "status": "open"
+    },
+    {
+      "id": "ord-demo-eth-sl",
+      "symbol": "ETH/USDT:USDT",
+      "side": "buy",
+      "type": "stop_market",
+      "price": 3348.9,
+      "amount": 1.84,
+      "status": "open"
+    }
+  ]
+}
