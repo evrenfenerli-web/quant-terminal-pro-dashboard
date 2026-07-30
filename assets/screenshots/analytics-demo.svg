@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="900" viewBox="0 0 1440 900" role="img" aria-label="Quantum Terminal Pro analytics dashboard demo">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#080914"/><stop offset="1" stop-color="#170b25"/></linearGradient>
+    <linearGradient id="a" x1="0" x2="1"><stop stop-color="#b777ff"/><stop offset="1" stop-color="#ff9f6e"/></linearGradient>
+    <style>.s{font-family:Inter,Arial,sans-serif}.m{font-family:Consolas,monospace}.t{fill:#f5f7ff}.u{fill:#8f98ad}.g{fill:#56e39f}.r{fill:#ff6f8e}.p{fill:#151b2c;stroke:#303956}.b{fill:#202842;stroke:#3a4566}.l{stroke:#2b3450;stroke-width:1}.bar{fill:url(#a)}</style>
+  </defs>
+  <rect width="1440" height="900" fill="url(#bg)"/>
+  <rect x="60" y="55" width="1320" height="790" rx="20" fill="#0d1120" stroke="#313a55"/>
+  <rect x="60" y="55" width="250" height="790" rx="20" fill="#111625"/>
+  <text x="105" y="118" class="s t" font-size="28" font-weight="800">QUANT <tspan fill="#ff9f6e">PRO</tspan></text>
+  <text x="105" y="210" class="s u" font-size="16">Overview</text>
+  <text x="105" y="270" class="s u" font-size="16">Trade Manager</text>
+  <rect x="88" y="310" width="178" height="44" rx="10" fill="#222a44" stroke="#7d3cff"/>
+  <text x="105" y="338" class="s t" font-size="16" font-weight="700">Analytics</text>
+  <text x="105" y="400" class="s u" font-size="16">Exit Report</text>
+  <text x="105" y="460" class="s u" font-size="16">Diagnostics</text>
+  <text x="350" y="118" class="s t" font-size="32" font-weight="800">PERFORMANCE ANALYTICS</text>
+  <text x="350" y="151" class="m u" font-size="14">R-multiple, drawdown, exit quality, rejected trades and regime behavior.</text>
+  <g class="m">
+    <rect x="350" y="190" width="210" height="86" rx="12" class="p"/><text x="374" y="223" class="u" font-size="12">WIN RATE</text><text x="374" y="258" class="t" font-size="30" font-weight="800">61.4%</text>
+    <rect x="580" y="190" width="210" height="86" rx="12" class="p"/><text x="604" y="223" class="u" font-size="12">PROFIT FACTOR</text><text x="604" y="258" class="g" font-size="30" font-weight="800">2.18</text>
+    <rect x="810" y="190" width="210" height="86" rx="12" class="p"/><text x="834" y="223" class="u" font-size="12">MAX DD</text><text x="834" y="258" class="r" font-size="30" font-weight="800">-2.7%</text>
+    <rect x="1040" y="190" width="270" height="86" rx="12" class="p"/><text x="1064" y="223" class="u" font-size="12">EXPECTANCY</text><text x="1064" y="258" class="g" font-size="30" font-weight="800">+$18.40/trade</text>
+  </g>
+  <rect x="350" y="320" width="610" height="295" rx="14" class="p"/>
+  <text x="378" y="362" class="s t" font-size="20" font-weight="800">Equity Curve</text>
+  <polyline points="390,555 460,530 525,548 590,488 655,505 720,430 785,455 850,376 920,340" fill="none" stroke="#57e39f" stroke-width="5"/>
+  <line x1="390" y1="570" x2="920" y2="570" class="l"/><line x1="390" y1="380" x2="920" y2="380" class="l"/><line x1="390" y1="475" x2="920" y2="475" class="l"/>
+  <rect x="985" y="320" width="325" height="295" rx="14" class="p"/>
+  <text x="1013" y="362" class="s t" font-size="20" font-weight="800">Regime Quality</text>
+  <text x="1013" y="414" class="m u" font-size="14">TREND_UP</text><rect x="1120" y="398" width="145" height="18" rx="9" class="bar"/>
+  <text x="1013" y="466" class="m u" font-size="14">TREND_DOWN</text><rect x="1120" y="450" width="118" height="18" rx="9" class="bar"/>
+  <text x="1013" y="518" class="m u" font-size="14">RANGE</text><rect x="1120" y="502" width="72" height="18" rx="9" class="bar"/>
+  <text x="1013" y="570" class="m u" font-size="14">CHOP</text><rect x="1120" y="554" width="38" height="18" rx="9" fill="#ff6f8e"/>
+  <rect x="350" y="655" width="960" height="125" rx="14" class="p"/>
+  <text x="378" y="695" class="s t" font-size="20" font-weight="800">Exit Intelligence</text>
+  <text x="378" y="735" class="m g" font-size="17">TP2 capture improved · trailing stop quality stable · rejected trades below threshold</text>
+  <text x="378" y="766" class="m u" font-size="14">Analytics are read from adapter files, so simple and advanced bots can report at their own level.</text>
+</svg>
